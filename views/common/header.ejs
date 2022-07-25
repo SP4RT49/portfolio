@@ -1,0 +1,79 @@
+<header>
+
+    <div id="navigation">
+        <nav class="bg-dark">
+            <ul id="menu" class="d-flex flex-wrap p-0">
+                <div class="logo_content">
+                    <a href="#">
+                        <img id="logo" src="img/SP4RT4.png" alt="">
+                    </a>
+                </div>
+                <div id="link_menu" class="links_content col-12">
+                    <li class="col-12">
+                        <a class="nav-link" href="/">Accueil</a>
+                    </li>
+                    <% if(isAdmin){%>
+                    <li class="col-12">
+                        <a class="nav-link" href="/download">Téléchargement</a>
+                    </li>
+                    <li class="col-12">
+                        <a class="nav-link" href="/tchat">Tchat</a>
+                    </li>
+                    <li class="col-12">
+                        <a class="nav-link" href="/graphql">GraphQL</a>
+                    </li>
+                    <%}%>
+                    <li class="col-12">
+                        <a class="nav-link" href="/404">Error 404 </a>
+                    </li>
+                </div>
+                <div class="user_content col-12 text-center">
+    
+                    <li class="nav-item mx-2">
+                        <% if(isAdmin){%>
+                    <a href="/logout">
+                        <button class="btn">
+                            Déconnexion
+                        </button>
+                    </a>
+                    <%} else {%>
+                    <a href="#">
+                        <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Connexion
+                        </button>
+                    </a>
+                    <%}%>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="/login" method="POST">
+                    <div class="modal-body">
+                        <div class="form-floating mb-3">
+                            <input type="text" id="username" name="username" class="form-control" placeholder="Nom de compte" required />
+                            <label for="username">Nom de Compte</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Mot de passe" required />
+                            <label for="password">Mot de Passe</label>
+                        </div>
+                        <%if (loginError) {%>
+                        <p>Le mot de passe est incorrect</p>
+                        <%}%>
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <input type="submit" class="btn btn-success col-5" value="se connecter">
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>

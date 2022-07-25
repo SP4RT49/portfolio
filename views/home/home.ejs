@@ -1,0 +1,255 @@
+<%- include('../common/head.ejs') %>
+<main id="content" class="hero_style area">
+
+    <div id="news_container" class="p-2 container">
+
+        <h1>Bonjour <%- isAdmin ? "Admin" : "visiteur !"%></h1>
+        <% if(isAdmin){%>
+        <div class="content_container">
+            <h5>Bienvenue !</h5>
+            <div class="description">
+                <p>Tu as enfin réussi à te connecter pour la première fois ! <br>
+                    Bien joué !</p>
+            </div>
+            <div class="date">
+                <p>12/12/2012</p>
+            </div>
+        </div>
+        <div class="content_container">
+            <h5>Place à la triche !</h5>
+            <div class="description">
+                <p>Pour faire croire qu'il y a du contenu, je vais intégrer du Lorem Ipsum.. Enfin, j'écris du contenu
+                    dans une autre langue que je maitrise totalement ! Bien entendu.. Hm..</p>
+            </div>
+            <div class="date">
+                <p>12/12/2012</p>
+            </div>
+        </div>
+        <div class="content_container">
+            <h5>Lorem, ipsum.</h5>
+            <div class="description">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde similique tempora nihil repellat fuga,
+                    dolorem dolor ipsam voluptatum animi doloremque. Perferendis est obcaecati laudantium sed.</p>
+            </div>
+            <div class="date">
+                <p>12/12/2012</p>
+            </div>
+        </div>
+        <div class="content_container">
+            <h5>Lorem ipsum dolor sit.</h5>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque saepe labore nobis quae, nostrum
+                    excepturi libero maiores pariatur voluptatem corrupti veniam aliquam illum culpa! Odio tenetur
+                    fugiat temporibus sunt harum earum rerum quisquam nesciunt neque! Laudantium, fugiat hic, vel
+                    consequatur maxime enim totam assumenda explicabo similique natus quia, nobis aperiam tempore ipsa
+                    dignissimos. Ipsam recusandae maxime, in repudiandae rem quis consequuntur quaerat obcaecati esse
+                    neque. Nihil, in, molestiae nam autem eius odio velit aspernatur deleniti illo, fuga minima.
+                    Excepturi, error!</p>
+            </div>
+            <div class="date">
+                <p>12/12/2012</p>
+            </div>
+        </div>
+        <div class="content_container">
+            <h5>Lorem ipsum dolor sit.</h5>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque saepe labore nobis quae, nostrum
+                    excepturi libero maiores pariatur voluptatem corrupti veniam aliquam illum culpa! Odio tenetur
+                    fugiat temporibus sunt harum earum rerum quisquam nesciunt neque! Laudantium, fugiat hic, vel
+                    consequatur maxime enim totam assumenda explicabo similique natus quia, nobis aperiam tempore ipsa
+                    dignissimos. Ipsam recusandae maxime, in repudiandae rem quis consequuntur quaerat obcaecati esse
+                    neque. Nihil, in, molestiae nam autem eius odio velit aspernatur deleniti illo, fuga minima.
+                    Excepturi, error!</p>
+            </div>
+            <div class="date">
+                <p>12/12/2012</p>
+            </div>
+        </div>
+        <div class="content_container">
+            <h5>Lorem ipsum dolor sit.</h5>
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque saepe labore nobis quae, nostrum
+                    excepturi libero maiores pariatur voluptatem corrupti veniam aliquam illum culpa! Odio tenetur
+                    fugiat temporibus sunt harum earum rerum quisquam nesciunt neque! Laudantium, fugiat hic, vel
+                    consequatur maxime enim totam assumenda explicabo similique natus quia, nobis aperiam tempore ipsa
+                    dignissimos. Ipsam recusandae maxime, in repudiandae rem quis consequuntur quaerat obcaecati esse
+                    neque. Nihil, in, molestiae nam autem eius odio velit aspernatur deleniti illo, fuga minima.
+                    Excepturi, error!</p>
+            </div>
+            <div class="date">
+                <p>12/12/2012</p>
+            </div>
+        </div>
+        <!-- SI PAS CONNECTE -->
+        <%} else {%>
+        <div class="content_container">
+            <h5>Un site qui en jette, hein ?!</h5>
+            <div class="description">
+                <p>Pas trop mal pour le moment, un menu, des liens, un volet pour les nouveautées.. <br>
+                    Mais c'est pas tout ! Connecte toi voir, il se pourrait que le site soit bien plus complet !</p>
+            </div>
+            <div class="date">
+                <p>12/12/2012</p>
+            </div>
+        </div>
+        <%}%>
+
+        <!-- Bandeau New's -->
+        <div class="news">
+            <h3>New's !</h3>
+            <% if(isAdmin){%>
+        <div class="n-list">
+            <%} else {%>
+            <div class="n-list blur">
+                <%}%>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title ">Ajout du Tchat !</h5>
+                                <p class="card-text">Une nouvelle page a été créé par le biais d'un cours très prenant!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Ajustement du CSS</h5>
+                                <p class="card-text">La page doit quand même avoir un minimum de style !</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 ">
+                        <div class="card bg-transparent">
+                            <div class="card-body">
+                                <h5 class="card-title">Special title treatment</h5>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional
+                                    content.
+                                </p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- fin bandeau New's -->
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    
+    
+    </div>
+</main>
+<%- include('../common/footer.ejs') %>

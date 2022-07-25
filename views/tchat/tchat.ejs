@@ -1,0 +1,44 @@
+    <%- include('../common/head.ejs') %>
+    <div id="content">
+        <div id="tchat">
+            <!-- Si connecté -->
+            <% if(isAdmin){%>
+            <h5 class="m-2">Bienvenue User</h5><br>
+            <div class="mx-2 w-100">
+        
+                <ul id="messages"></ul>
+            </div>
+            <form id="form" action="">
+                <input id="input" autocomplete="off" autofocus /><button>Envoyer</button>
+            </form>
+            <!-- Si déconnecté -->
+            <%} else {%>
+            <h1>Veuillez vous connecter pour poursuivre.</h1>
+            <%}%>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+        var socket = io();
+
+        var messages = document.getElementById('messages');
+        var form = document.getElementById('form');
+        var input = document.getElementById('input');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (input.value) {
+                socket.emit('chat message', input.value);
+                console.log(input.value)
+                input.value = '';
+            }
+        });
+
+        socket.on('chat message', function (msg) {
+            var item = document.createElement('li');
+            item.textContent = `Pseudo : `+msg;
+            messages.appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+    </script>
