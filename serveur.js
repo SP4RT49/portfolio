@@ -22,7 +22,7 @@ app.use(express.urlencoded({
 }))
 io.on('connection', (socket) => {
     console.log('User connected');
-    
+
     socket.on('chat message', msg => {
         io.emit('chat message', msg);
     });
@@ -30,23 +30,14 @@ io.on('connection', (socket) => {
 
 // ROUTES
 app.get('/', function (req, res) {
-    
-    res.render('./home/home.ejs', {
+
+        res.render('./home/home.ejs', {
             pageTitle: 'Accueil',
             isAdmin,
             loginError
 
         });
 
-    })
-    // LOGIN
-    .get('/login', function (req, res) {
-
-        res.render('login/login.ejs', {
-            pageTitle: 'login',
-            isAdmin,
-            loginError
-        })
     })
     // TELECHARGEMENT
     .get('/download', function (req, res) {
@@ -85,8 +76,12 @@ app.get('/', function (req, res) {
 
 //Error 404
 app.use(function (req, res, next) {
-    res.status(404).render('404/404.ejs', {isAdmin,loginError});
+    res.status(404).render('404/404.ejs', {
+        pageTitle: 'Page Introuvable',
+        isAdmin,
+        loginError
+    });
 });
 
-console.log('[' + port + ']Serveur démarré sur http://localhost:'+ port);
+console.log('[' + port + ']Serveur démarré sur http://localhost:' + port);
 server.listen(port);
