@@ -1,112 +1,19 @@
 <%- include('../common/head.ejs') %>
 <main id="home_content" class="hero_style area">
-
-    <div id="news_container" class="p-2 container">
-
-        <h1>Bonjour <%- isAdmin ? "Admin" : "visiteur !"%></h1>
-        <% if(isAdmin){%>
-        <div class="article_container">
-            <h5>Bienvenue !</h5>
-            <div class="description">
-                <p>Tu as enfin réussi à te connecter pour la première fois ! <br>
-                    Bien joué !</p>
-            </div>
-            <div class="date">
-                <p>12/12/2012</p>
-            </div>
-        </div>
-        <div class="article_container">
-            <h5>Place à la triche !</h5>
-            <div class="description">
-                <p>Pour faire croire qu'il y a du contenu, je vais intégrer du Lorem Ipsum.. Enfin, j'écris du contenu
-                    dans une autre langue que je maitrise totalement ! Bien entendu.. Hm..</p>
-            </div>
-            <div class="date">
-                <p>12/12/2012</p>
-            </div>
-        </div>
-        <div class="article_container">
-            <h5>Lorem, ipsum.</h5>
-            <div class="description">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde similique tempora nihil repellat fuga,
-                    dolorem dolor ipsam voluptatum animi doloremque. Perferendis est obcaecati laudantium sed.</p>
-            </div>
-            <div class="date">
-                <p>12/12/2012</p>
-            </div>
-        </div>
-        <div class="article_container">
-            <h5>Lorem ipsum dolor sit.</h5>
-            <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque saepe labore nobis quae, nostrum
-                    excepturi libero maiores pariatur voluptatem corrupti veniam aliquam illum culpa! Odio tenetur
-                    fugiat temporibus sunt harum earum rerum quisquam nesciunt neque! Laudantium, fugiat hic, vel
-                    consequatur maxime enim totam assumenda explicabo similique natus quia, nobis aperiam tempore ipsa
-                    dignissimos. Ipsam recusandae maxime, in repudiandae rem quis consequuntur quaerat obcaecati esse
-                    neque. Nihil, in, molestiae nam autem eius odio velit aspernatur deleniti illo, fuga minima.
-                    Excepturi, error!</p>
-            </div>
-            <div class="date">
-                <p>12/12/2012</p>
-            </div>
-        </div>
-        <div class="article_container">
-            <h5>Lorem ipsum dolor sit.</h5>
-            <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque saepe labore nobis quae, nostrum
-                    excepturi libero maiores pariatur voluptatem corrupti veniam aliquam illum culpa! Odio tenetur
-                    fugiat temporibus sunt harum earum rerum quisquam nesciunt neque! Laudantium, fugiat hic, vel
-                    consequatur maxime enim totam assumenda explicabo similique natus quia, nobis aperiam tempore ipsa
-                    dignissimos. Ipsam recusandae maxime, in repudiandae rem quis consequuntur quaerat obcaecati esse
-                    neque. Nihil, in, molestiae nam autem eius odio velit aspernatur deleniti illo, fuga minima.
-                    Excepturi, error!</p>
-            </div>
-            <div class="date">
-                <p>12/12/2012</p>
-            </div>
-        </div>
-        <div class="article_container">
-            <h5>Lorem ipsum dolor sit.</h5>
-            <div class="description">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque saepe labore nobis quae, nostrum
-                    excepturi libero maiores pariatur voluptatem corrupti veniam aliquam illum culpa! Odio tenetur
-                    fugiat temporibus sunt harum earum rerum quisquam nesciunt neque! Laudantium, fugiat hic, vel
-                    consequatur maxime enim totam assumenda explicabo similique natus quia, nobis aperiam tempore ipsa
-                    dignissimos. Ipsam recusandae maxime, in repudiandae rem quis consequuntur quaerat obcaecati esse
-                    neque. Nihil, in, molestiae nam autem eius odio velit aspernatur deleniti illo, fuga minima.
-                    Excepturi, error!</p>
-            </div>
-            <div class="date">
-                <p>12/12/2012</p>
-            </div>
-        </div>
-        <!-- SI PAS CONNECTE -->
-        <%} else {%>
-        <div class="article_container">
-            <h5>Un site qui en jette, hein ?!</h5>
-            <div class="description">
-                <p>Pas trop mal pour le moment, un menu, des liens, un volet pour les nouveautées.. <br>
-                    Mais c'est pas tout ! Connecte toi voir, il se pourrait que le site soit bien plus complet !</p>
-            </div>
-            <div class="date">
-                <p>12/12/2012</p>
-            </div>
-        </div>
-        <%}%>
-
-        <!-- animated background -->
-        <ul class="circles">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
+    <%- include('sections/home_hero.ejs') %>
+    <%- include('sections/home_about.ejs') %>
+    <!-- animated background -->
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 </main>
 <%- include('../common/footer.ejs') %>
