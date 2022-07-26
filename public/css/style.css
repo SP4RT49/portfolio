@@ -159,6 +159,9 @@ a, button{
 .hero_home h1{
     font-size: clamp(40px, 8vw, 80px);;
 }
+.hero_home span{
+    color: #db903be7;
+}
 
 .nextBtn{
     display: flex;
@@ -174,6 +177,9 @@ a, button{
     border-radius: 5px;
     cursor: pointer;
     animation: pulse-red 2s infinite;
+}
+.nextBtn svg{
+    color: #f6f6f610;
 }
 @keyframes pulse-red {
     0% {
