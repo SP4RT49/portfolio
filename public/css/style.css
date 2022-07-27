@@ -14,13 +14,16 @@
     --text-title:#EFF6EE;
     --text-p: #EFF6EE;
     --text-link: #EFF6EE;
-    /* toogle white mode */
-    --wm-color-bg:#fff3da;
-    --wm-color-bg-alt: #A8A8A8;
-    --wm-color-bg-soft:#9197AE;
-    --wm-text-title:#EFF6EE;
-    --wm-text-p: #EFF6EE;
-    --wm-text-link: #EFF6EE;
+    --color-square: rgba(255, 255, 255, 0.2);
+}
+[data-theme="dark"]{
+    --color-bg:#fff3da;
+    --color-bg-alt: #A8A8A8;
+    --color-bg-soft:#9197AE;
+    --text-title:#1D1D1D;
+    --text-p: #1D1D1D;
+    --text-link: #1D1D1D;
+    --color-square: rgba(0, 0, 0, 0.2);
 }
 /* ### FIN VARIABLES ### */
 /* ### DEBUT DEFAULT ### */
@@ -108,7 +111,7 @@ a, button{
 @keyframes shake {
 	0%, 100% {transform: translateX(0);}
 	10%, 60%, 90% {transform: translateX(-10px);}
-	40%, 80% {transform: translateX(3px);}
+	40%, 80% {transform: translateX(0px);}
 }
 #navigation #menu .nav a{
     align-items: center;
@@ -172,7 +175,7 @@ a, button{
     width: 50px;
     height: 50px;
     box-shadow: rgb(114 114 114) 0px 0px 5px 0px;
-    background-color: rgba(29, 29, 29, 0.274);
+    /* background-color: rgba(29, 29, 29, 0.274); */
     transition: 0.9s ease-in-out;
     border-radius: 5px;
     cursor: pointer;
@@ -190,8 +193,10 @@ a, button{
 }
 100% {
     box-shadow: 0 0 0 0 rgb(255 82 82 / 0%);
-}
-    
+}}
+.nextBtn:hover, .nextBtn:hover svg{
+    color: var(--text-link);
+    animation: pulse-red none;
 }
 /* scrollbar personnalisée */
 #home_content::-webkit-scrollbar,
@@ -202,20 +207,20 @@ a, button{
     border: 2px solid transparent;
 }
 /* ### FIN PAGE HOME ### */
-/* ### DEBUT ARTICLE DESIGN ### */
-.article_container{
-    margin: 20px 0;
-    padding: 10px;
-    width: calc(100%);
-    background-color: var(--color-bg-soft);
-    border-style: solid;
-    border-radius: 0 0 10px 10px;
-    border-width: 0 2px 5px 2px;
-    border-color: rgba(121, 121, 121, 0.445);
-} .article_container p{
-    color: var(--text-p);
+/* ### DEBUT PAGE ABOUT ### */
+#about_container{
+    height: 100vh;
+    background-color: var(--color-bg);
 }
-/* ### FIN ARTICLE DESIGN ### */
+.about_content{
+    background-color: var(--wm-color-bg);
+    border-radius: 15px;
+}
+#profile .avatar{
+    border-radius: 100%;
+    overflow: hidden;
+}
+/* ### FIN PAGE ABOUT ### */
 /* ### DEBUT ANIMATED BACKGROUND ### */
 .area {
     background: var(--color-bg);
@@ -237,7 +242,7 @@ a, button{
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--color-square);
     animation: animate 25s linear infinite;
     bottom: -150px;
 
@@ -397,3 +402,86 @@ a, button{
     border-right: none;
 }
 /* ### FIN TCHAT ### */
+
+
+
+
+
+
+
+
+
+
+/*Bouton switch Dark Light mode */
+.theme-switch_container{
+    position: fixed;
+    top: 0;
+    right: 25px;
+    width: 40px;
+    height: 50px;
+    background-color: #1D1D1D;
+    border: 2px solid #e3b81378;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 0 0 42px 42px;
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+}
+.theme-switch {
+  display: inline-block;
+  height: 30px;
+  position: relative;
+  width: 30px;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+    background-color: #e3b813;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    overflow: hidden;
+}
+
+.slider:before {
+    background-color: var(--color-bg);
+    bottom: 7px;
+    content: "";
+    height: 25px;
+    left: 0px;
+    position: absolute;
+    transition: .4s;
+    width: 20px;
+}
+
+input:checked + .slider {
+  background-color: var(--color-bg);
+}
+
+input:checked + .slider:before {
+    transform: translateX(5px) translateY(2px);
+    height: 20px;
+    background-color: #e3b813;
+    border: 2px solid #1D1D1D;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
