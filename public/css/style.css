@@ -5,30 +5,31 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 /* ### DEBUT VARIABLES ### */
 :root{
-    --color-bg:#1D1D1D;
-    --color-bg-alt: #2f2f2f;
+    --color-bg:#2c2a32;
+    --color-bg-alt: #413f46;
     --text-title:#EFF6EE;
     --text-p: #EFF6EE;
     --text-link: #EFF6EE;
 
     --color-bg-inverse:#fff3da;
-    --text-title-inverse:#1D1D1D;
-    --text-p-inverse: #1D1D1D;
-    --text-link-inverse: #1D1D1D;
+    --text-title-inverse:#2c2a32;
+    --text-p-inverse: #2c2a32;
+    --text-link-inverse: #2c2a32;
     
     --color-square: rgba(255, 255, 255, 0.2);
 }
 [data-theme="dark"]{
     --color-bg:#fff3da;
     --color-bg-alt: #A8A8A8;
-    --text-title:#1D1D1D;
-    --text-p: #1D1D1D;
-    --text-link: #1D1D1D;
+    --text-title:#2c2a32;
+    --text-p: #2c2a32;
+    --text-link: #2c2a32;
 
-    --color-bg-inverse:#1D1D1D;
+    --color-bg-inverse:#2c2a32;
     --text-title-inverse:#EFF6EE;
     --text-p-inverse: #EFF6EE;
     --text-link-inverse: #EFF6EE;
@@ -37,6 +38,12 @@
 }
 /* ### FIN VARIABLES ### */
 /* ### DEBUT DEFAULT ### */
+.bg{
+    background-color: var(--color-bg-);
+    color: var(--text-link);
+}.bg *{
+    color: var(--text-p-inverse);
+}
 h1,h2,h3,h4,h5{
     color: var(--text-title);
 }
@@ -46,19 +53,6 @@ p{
 a, button{
     color: var(--text-link) !important;
 }
-
-/* grid colonnes */
-.col2{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 10px;
-}
-.col3{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 10px;
-}
-
 /* Couleurs inversés */
 .bg-inverse{
     background-color: var(--color-bg-inverse);
@@ -73,6 +67,19 @@ a, button{
 .svg-inverse{
     transform: scaleX(-1) scaleY(-1);
 }
+/* grid colonnes */
+.col2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
+.col3{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+
 /* ### FIN DEFAULT ### */
 /* ### DEBUT BODY CSS ### */
 #site{
@@ -242,13 +249,47 @@ a, button{
 }
 
 #about_container{
-    min-height: 100vh;
+    /* min-height: 100vh; */
 }
 #profile .avatar{
     border-radius: 100%;
     overflow: hidden;
 }
+#description_container{
+    padding-left: 100px;
+}
+.description_content{
+    padding-left: 25px;
+    font-size: 16px;
+    text-align: justify;
+}
 /* ### FIN PAGE ABOUT ### */
+/* ### DEBUT SECTION PROJET ### */
+#home_project{
+    width: 100%;
+    height: 80vh;
+    padding-top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project_card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 175px;
+    word-wrap: break-word;
+    background-color: var(--color-bg-inverse);
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}.project_card *{
+    color: var(--text-link-inverse);
+}
+/* ### FIN SECTION PROJET ### */
+
 /* ### DEBUT ANIMATED BACKGROUND ### */
 .area {
     background: var(--color-bg);
