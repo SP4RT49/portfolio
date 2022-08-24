@@ -39,6 +39,14 @@ app.get('/', function (req, res) {
         });
 
     })
+    // Page Projets
+    .get('/projets', function (req, res) {
+        res.render('./projets/projets.ejs', {
+            pageTitle: 'Projets',
+            isAdmin,
+            loginError
+        });
+    })
     // TELECHARGEMENT
     .get('/download', function (req, res) {
         const file = `./assets/download/text.txt`;
